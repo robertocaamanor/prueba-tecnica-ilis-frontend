@@ -13,7 +13,9 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado lo siguiente:
 
 1. Clona este repositorio en tu máquina local:
 
-   ```https://github.com/robertocaamanor/prueba-tecnica-ilis-frontend.git```
+   ```
+   https://github.com/robertocaamanor/prueba-tecnica-ilis-frontend.git
+   ```
 
 ## Accede al directorio del proyecto:
 
