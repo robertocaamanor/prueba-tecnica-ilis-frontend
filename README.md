@@ -87,7 +87,7 @@ Este modo proporciona retroalimentación inmediata sobre el estado de tus prueba
 
 Este proyecto frontend interactúa con un API REST a través de los siguientes endpoints:
 
-* `GET /products/all`: Recupera la lista completa de todos los productos almacenados.
+* `GET /products`: Recupera la lista completa de todos los productos almacenados.
 * `GET /products?name=<valor>&category=<valor>&inStock=<booleano>`: Permite filtrar productos basándose en su nombre (parcial o exacto), categoría y disponibilidad en stock (true o false).
 * `POST /products`: Envía los datos de un nuevo producto al servidor para su almacenamiento.
 
