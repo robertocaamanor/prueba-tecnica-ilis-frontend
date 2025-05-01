@@ -20,60 +20,83 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado lo siguiente:
 
 Instala las dependencias necesarias:
 
-## Scripts disponibles
-En el directorio del proyecto, puedes ejecutar los siguientes comandos:
+## Scripts Disponibles
 
-npm start
-Inicia la aplicación en modo de desarrollo.
-Abre http://localhost:3000 para verla en tu navegador.
+En el directorio raíz del proyecto, puedes utilizar los siguientes scripts de npm:
 
-La página se recargará automáticamente si realizas cambios en el código.
-También verás errores en la consola si los hay.
+### `npm start`
 
-npm run build
-Construye la aplicación para producción en la carpeta build.
-Optimiza el código para el mejor rendimiento.
+Ejecuta la aplicación en el entorno de desarrollo. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para visualizarla.
 
-npm test
-Ejecuta las pruebas en modo interactivo.
+La página se actualizará automáticamente al guardar cambios en los archivos. Adicionalmente, cualquier error de linting o en tiempo de ejecución se mostrará directamente en la consola.
 
-## Componentes principales
-1. ProductList
-Descripción: Lista todos los productos disponibles.
-Funcionalidades:
-Buscar productos por nombre, categoría y disponibilidad en stock.
-Mostrar etiquetas de "Sin stock" o "Stock limitado" según la cantidad disponible.
-Botón para redirigir al formulario de añadir producto.
-Mensaje de alerta si no se encuentran productos.
-2. AddProduct
-Descripción: Permite añadir un nuevo producto.
-Validaciones:
-Todos los campos son obligatorios.
-El precio y el stock deben ser mayores o iguales a 0.
-La URL de la imagen debe contener extensiones válidas (JPG, JPEG, PNG).
-Funcionalidades:
-Muestra mensajes de error debajo de cada campo con bordes rojos si hay errores.
-Redirige a la lista de productos tras añadir un producto exitosamente.
-API utilizada
-Este proyecto consume un API REST con los siguientes endpoints:
+### `npm run build`
 
-GET /products/all: Obtiene todos los productos.
-GET /products?name=&category=&inStock=: Filtra productos por nombre, categoría y disponibilidad.
-POST /products: Añade un nuevo producto.
-Cómo ejecutar el proyecto
-Asegúrate de que el backend esté corriendo en http://localhost:8080.
+Compila la aplicación para su despliegue en un entorno de producción. El resultado de la compilación se guarda en la carpeta `build/`.
 
-Inicia la aplicación con:
+Este script optimiza el código fuente para obtener el mejor rendimiento posible, incluyendo la minificación de archivos estáticos y la generación de los assets necesarios para producción.
 
-Abre http://localhost:3000 en tu navegador para interactuar con la aplicación.
+### `npm test`
 
-Tecnologías utilizadas
-React: Biblioteca principal para la construcción de la interfaz de usuario.
-Bootstrap: Framework CSS para el diseño responsivo.
-Axios: Cliente HTTP para realizar solicitudes al backend.
-React Router DOM: Manejo de rutas en la aplicación.
-Autor
+Ejecuta el runner de pruebas en modo interactivo (watch mode). Cualquier cambio que realices en los archivos de prueba o en los componentes bajo prueba provocará una nueva ejecución de las pruebas.
+
+Este modo proporciona retroalimentación inmediata sobre el estado de tus pruebas mientras desarrollas.
+
+## 1. ProductList
+
+**Descripción:** Muestra una lista de todos los productos disponibles en el sistema.
+
+**Funcionalidades:**
+
+* **Búsqueda y Filtrado:** Permite a los usuarios buscar productos por nombre, filtrar por categoría y verificar la disponibilidad en stock.
+* **Indicadores de Stock:** Visualiza etiquetas distintivas para indicar si un producto está "Sin stock" o tiene "Stock limitado", facilitando la identificación rápida del inventario.
+* **Acceso a Formulario de Adición:** Incorpora un botón claramente visible que redirige al usuario al formulario para añadir un nuevo producto al catálogo.
+* **Gestión de Resultados Vacíos:** Muestra un mensaje de alerta informativo cuando no se encuentran productos que coincidan con los criterios de búsqueda o cuando la lista está vacía.
+
+## 2. AddProduct
+
+**Descripción:** Proporciona un formulario intuitivo para la creación de nuevos productos dentro del sistema.
+
+**Validaciones:**
+
+* **Campos Obligatorios:** Asegura que todos los campos del formulario sean completados antes de permitir el envío, garantizando la integridad de los datos.
+* **Validación Numérica:** Verifica que los campos de precio y stock contengan valores numéricos mayores o iguales a cero, previniendo entradas inválidas.
+* **Validación de URL de Imagen:** Comprueba que la URL proporcionada para la imagen del producto contenga una de las extensiones de archivo válidas: JPG, JPEG o PNG.
+
+**Funcionalidades:**
+
+* **Retroalimentación Visual de Errores:** Muestra mensajes de error descriptivos directamente debajo de cada campo que no cumple con las validaciones, resaltando el campo con un borde rojo para una identificación clara.
+* **Redirección Tras Éxito:** Después de añadir un producto exitosamente a través del formulario, el usuario es automáticamente redirigido a la página de la lista de productos para visualizar la actualización.
+
+## API Utilizada
+
+Este proyecto frontend interactúa con un API REST a través de los siguientes endpoints:
+
+* `GET /products/all`: Recupera la lista completa de todos los productos almacenados.
+* `GET /products?name=<valor>&category=<valor>&inStock=<booleano>`: Permite filtrar productos basándose en su nombre (parcial o exacto), categoría y disponibilidad en stock (true o false).
+* `POST /products`: Envía los datos de un nuevo producto al servidor para su almacenamiento.
+
+## Cómo Ejecutar el Proyecto
+
+**Prerrequisitos:**
+
+* Asegúrate de que el backend de la aplicación esté en funcionamiento y accesible en la siguiente dirección: `http://localhost:8080`.
+
+**Pasos para Iniciar la Aplicación Frontend:**
+
+1.  Abre tu terminal o línea de comandos.
+2.  Navega hasta el directorio raíz del proyecto frontend.
+3.  Ejecuta el comando necesario para iniciar la aplicación (generalmente `npm start` o `yarn start`, dependiendo de tu gestor de paquetes).
+
+Una vez que la aplicación se haya compilado e iniciado correctamente, podrás acceder a ella a través de tu navegador web en la siguiente URL: `http://localhost:3000`.
+
+## Tecnologías Utilizadas
+
+* **React:** La biblioteca de JavaScript fundamental utilizada para construir la interfaz de usuario interactiva y basada en componentes.
+* **Bootstrap:** Un framework CSS popular que proporciona estilos predefinidos y un sistema de diseño responsivo para una apariencia consistente y adaptable a diferentes dispositivos.
+* **Axios:** Un cliente HTTP basado en promesas para realizar solicitudes asíncronas al API del backend.
+* **React Router DOM:** Una biblioteca de enrutamiento para React que permite la navegación entre diferentes vistas o páginas dentro de la aplicación de una sola página (SPA).
+
+## Autor
+
 Desarrollado por Roberto Caamaño como parte de una prueba técnica.
-
-Licencia
-Este proyecto está bajo la licencia MIT.
