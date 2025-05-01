@@ -17,9 +17,23 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado lo siguiente:
    https://github.com/robertocaamanor/prueba-tecnica-ilis-frontend.git
    ```
 
-## Accede al directorio del proyecto:
+2.  **Accede al directorio del proyecto:**
 
-Instala las dependencias necesarias:
+    Abre tu terminal o línea de comandos y navega hasta la ubicación donde has clonado o descargado el repositorio del proyecto. Utiliza el siguiente comando:
+
+    ```bash
+    cd prueba-tecnica-frontend
+    ```
+
+3.  **Instala las dependencias:**
+
+    Una vez dentro del directorio del proyecto, ejecuta el siguiente comando para descargar e instalar todas las bibliotecas y dependencias necesarias definidas en el archivo `package.json`:
+
+    ```bash
+    npm install
+    ```
+
+    Este proceso puede tardar unos minutos dependiendo de tu conexión a internet. Una vez completado, se habrá creado una carpeta `node_modules` dentro del directorio del proyecto.
 
 ## Scripts Disponibles
 
