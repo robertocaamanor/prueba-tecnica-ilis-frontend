@@ -116,8 +116,8 @@ const ProductList = () => {
               onChange={handleChange}
             >
               <option value="">Todos</option>
-              <option value="true">Sí</option>
-              <option value="false">No</option>
+              <option value="true">Con stock</option>
+              <option value="false">Sin stock</option>
             </select>
           </div>
         </div>
